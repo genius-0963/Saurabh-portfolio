@@ -1,0 +1,58 @@
+// CraftLang Functions Example
+// Demonstrates function declarations and calls
+
+// Simple function
+function greet(name) {
+    return "Hello, " + name + "!";
+}
+
+// Recursive function
+function factorial(n) {
+    if (n <= 1) {
+        return 1;
+    }
+    return n * factorial(n - 1);
+}
+
+// Function with multiple parameters
+function calculate(a, b, operation) {
+    if (operation == "add") {
+        return a + b;
+    } else if (operation == "multiply") {
+        return a * b;
+    } else if (operation == "divide") {
+        if (b == 0) {
+            print("Error: Division by zero!");
+            return null;
+        }
+        return a / b;
+    } else {
+        return a - b;
+    }
+}
+
+// Main program
+print("=== CraftLang Functions Demo ===");
+
+// Test greeting function
+let message = greet("CraftLang Developer");
+print(message);
+
+// Test factorial function
+let num = 5;
+let fact = factorial(num);
+print(num + "! = " + fact);
+
+// Test calculator function
+let x = 15;
+let y = 3;
+
+print("Calculator Results:");
+print(x + " + " + y + " = " + calculate(x, y, "add"));
+print(x + " * " + y + " = " + calculate(x, y, "multiply"));
+print(x + " / " + y + " = " + calculate(x, y, "divide"));
+print(x + " - " + y + " = " + calculate(x, y, "subtract"));
+
+// Nested function calls
+print("Factorial of 6: " + factorial(6));
+print("Greeting with calculation: " + greet("Result: " + calculate(10, 2, "multiply")));
